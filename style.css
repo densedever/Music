@@ -1,0 +1,69 @@
+
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border: 1px solid black;
+}
+
+body {
+  background-color: black;
+  background-image: url("assets/musicbg.jpeg");
+}
+
+#container {
+  background-color: white;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  width: 80%;
+  margin: auto;
+}
+
+#container header {
+  background-color: bisque;
+  text-align: center;
+}
+
+#main-nav {
+  background-color: black;
+  color: white;
+}
+
+#main-nav nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main-nav nav ul li {
+  display: inline;
+  padding: 2em;
+}
+
+#main-nav nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+#main-nav nav ul li a:hover {
+  background-color: bisque;
+}
+
+.active {
+  background-color: tan;
+}
+
+
+#all-content {}
+
+#home {}
+
+#learn {}
+
+#about {}
+
+#contact {}
+
+footer {
+  padding: 2em auto;
+  background-color: black;
+  color: white;
+}
