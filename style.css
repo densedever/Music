@@ -56,6 +56,13 @@ body {
   background-color: tan;
 }
 
+.current {
+  display: block;
+}
+
+.read {
+  display: hidden;
+}
 
 #all-content {}
 
