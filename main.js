@@ -14,3 +14,4 @@ function navHandler(event) {
   this.setAttribute('class', 'active');
 }
 
+// TODO: include function for showing/hiding individual sections ('.rolling-content').

@@ -52,14 +52,17 @@ body {
   background-color: bisque;
 }
 
+/* currently active tab */
 .active {
   background-color: tan;
 }
 
+/* currently-viewed section */
 .current {
   display: block;
 }
 
+/* section either read or not read */
 .read {
   display: hidden;
 }
