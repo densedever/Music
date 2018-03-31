@@ -1,22 +1,29 @@
 
 const navLinks = document.querySelectorAll('#main-nav a');
 const sections = document.querySelectorAll('.navbarshowhide');
+const learnSections = document.querySelectorAll('.rolling-content');
 
-for(let i=0, j=navLinks.length; i<j; i++) {
-  navLinks[i].addEventListener('click', navHandler);
-}
+navLinks.forEach(link => link.addEventListener('click', navHandler));
 
 function navHandler(event) {
-  for(let i=0, j=navLinks.length; i<j; i++) {
-    navLinks[i].setAttribute('class', '');
-  }
+  // deactivate all nav links
+  navLinks.forEach(link => link.setAttribute('class', ''));
+
+  // hide all sections in the 'learn' section
+  learnSections.forEach(s => s.setAttribute('class', 'read'));
+  
+  // light up the currently active tab:
+  this.setAttribute('class', 'active');
+  
+  // set all sections to hidden
   for(let i=0, j=sections.length; i<j; i++) {
-    // set all to hidden
-    sections[i].setAttribute('class', sections[i].className.replace(sections[i].className, 'navbarshowhide'))
+    sections[i].setAttribute('class', 'read');
   }
   // show current
+  sections[0].setAttribute('class', 'current');
 
-  this.setAttribute('class', 'active');
+  // show first learn section:
+  //learnSections[0].setAttribute('class', 'current');
 }
 
 // TODO: 
