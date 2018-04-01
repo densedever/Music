@@ -63,7 +63,7 @@ body {
 
 /* section either read or not read */
 .read {
-  display: hidden;
+  display: none;
 }
 
 #all-content {}
