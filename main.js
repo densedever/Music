@@ -18,3 +18,32 @@ function navHandler(e) {
   }
   sections[index].setAttribute('class', 'current');
 }
+
+let currentlyViewing = 0;
+
+
+window.addEventListener('keypress', arrowHandler);
+
+function arrowHandler(event) {
+  const key = event.keyCode || event.which;
+  
+  if(key === 37) {
+    if(sections[1].classList.contains('current')) {
+      learnSections.forEach(ls => ls.setAttribute('class', 'read'));
+      learnSections[--currentlyViewing].setAttribute('class', 'current');
+    }
+  }
+
+  if(key === 39) {
+    if(sections[1].classList.contains('current')) {
+      learnSections.forEach(ls => ls.setAttribute('class', 'read'));
+      learnSections[++currentlyViewing].setAttribute('class', 'current');
+    }
+  }
+}
+
+
+
+
+
+
