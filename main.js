@@ -1,11 +1,20 @@
-const navLinks = document.querySelectorAll('#main-nav a');
-const sections = document.querySelectorAll('.navbarshowhide');
-const learnSections = document.querySelectorAll('.rolling-content');
+const navLinks = document.querySelectorAll('#main-nav a'),
+      sections = document.querySelectorAll('.navbarshowhide'),
+      learnSections = document.querySelectorAll('.rolling-content'),
+      pages = document.getElementById('pagelist');
 
 navLinks.forEach(l => l.addEventListener('click', navHandler));
 
 sections.forEach(s => s.setAttribute('class', 'read'));
 sections[0].setAttribute('class', 'current');
+
+let pageHTML = ``;
+
+for(let i = 0; i<learnSections.length; i++) {
+  pageHTML += `<button type='button' class='page'>${i+1}</button>`;
+}
+
+pages.innerHTML = pageHTML;
 
 function navHandler(e) {
   sections.forEach(s => s.setAttribute('class', 'read')); // hide all sections
@@ -17,6 +26,18 @@ function navHandler(e) {
     }
   }
   sections[index].setAttribute('class', 'current');
+}
+
+function pageHandler(e) {
+  learnSections.forEach(s => s.setAttribute('class', 'read'));
+  let index;
+  for(let i=0; i<learnSections.length; i++) {
+    if(learnSections[i] === this) {
+      index = i;
+      break;
+    }
+  }
+  learnSections[index].setAttribute('class', 'current');
 }
 
 let currentlyViewing = 0;
@@ -44,6 +65,6 @@ function arrowHandler(event) {
 
 
 
-
+pages.querySelectorAll('.page').forEach(p => p.addEventListener('click', pageHandler));
 
 
